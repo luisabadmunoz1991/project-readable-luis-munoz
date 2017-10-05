@@ -1,0 +1,383 @@
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.App-header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color:white ;
+}
+
+.home-link {
+  display: block;
+  width: 189px;
+  height: 113px;
+  background-image: url('./../icons/ggl3.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size:166px;
+  font-size: 0;
+
+}
+
+
+/* Sidebar*/
+.Sidebar-show-posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Sidebar-menu {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 60px;
+  border: 0;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+
+
+}
+
+.cat-list {
+ padding-top: 10px;
+ padding-bottom: 20px;
+}
+
+.cat-item {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+
+}
+
+.cat-item-selected {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.sidebar-add {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sidebar-add-post-link {
+  background-color: transparent;
+  background-image: url('./../icons/mas1.png');
+  background-repeat: no-repeat;
+  background-position: 5% center;
+  width: 25px;
+  height: 25px;
+  padding-right: 8px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+
+/* Show Posts */
+.post {
+  font-size: medium;
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+  max-width: 500px;
+  min-width: 500px;
+
+
+}
+
+.comment {
+  font-size: small;
+  padding-left: 40px;
+  padding-top: 10px;
+  border-left: 1px solid #ccc;
+  max-width: 440px;
+  min-width: 440px;
+}
+
+.post-list {
+  list-style-type: none;
+}
+.post-list-item {
+  padding-top: 10px;
+background: #abbaab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.post-details {
+  padding-left: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.post-details p {
+  margin: 3px;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.post-author {
+  font-style: oblique;
+  font-size: small;
+}
+
+.detail-not-found {
+  font-style: oblique;
+  font-size: small;
+  padding: 40px;
+  line-height: 2;
+  min-width: 440px;
+  border-left: 1px solid #ccc;
+  color: white;
+}
+
+/* Toolbar for posts */
+.post-tools {
+  padding: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  font-size: small;
+}
+
+.post-comment {
+  display: flex;
+  color: #676767;
+}
+
+.post-comment-link {
+  padding-left: 40px;
+  margin-right: 5px;
+  background-color: transparent;
+  background-image: url('./../icons/comentario.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  border: 0;
+  color: pink;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.post-title-link {
+  font-size: medium;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  outline: none;
+}
+
+.post-vote {
+  display: flex;
+  color:black;
+}
+.post-voteup-link {
+  padding-left: 50px;
+  margin-left: 20px;
+  margin-right: 5px;
+  background-color: transparent;
+  background-image: url('./../icons/like.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  border: 0;
+  color: black;
+  text-decoration: none;
+  font-size: 5spx;;
+  cursor: pointer;
+  outline: none;
+}
+
+.post-votedown-link {
+  padding-left: 25px;
+  margin-left: 5px;
+  background-color: transparent;
+  background-image: url('./../icons/dislike.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border: 0;
+  color: #676767;
+  text-decoration: none;
+  font-size: 5spx;;
+  cursor: pointer;
+  outline: none;
+}
+
+.post-edit {
+  padding-left: 130px;
+  background-color: transparent;
+  background-image: url('./../icons/write.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 0;
+  color: transparent;
+  font-size: 0px;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.post-remove {
+  background-color: transparent;
+  background-image: url('./../icons/menos.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 0;
+  color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* Add Post */
+.Add-post {
+  flex-direction: column;
+  border-left: 1px solid #ccc;
+
+
+}
+
+.add-form {
+  padding-bottom: 0px;
+  display: flex;
+  max-width: 520px;
+  border-left: 1px solid #ccc;
+}
+
+.add-details {
+  padding-left: 55px;
+  padding-top: 10px;
+}
+
+.add-details input {
+  width: 85%;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  font-size: small;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: 0;
+}
+
+.add-details input:invalid {
+  border-bottom: 1px dashed #ccc;
+}
+
+.add-text-area {
+  width: 85%;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  font-size: small;
+  font-family: sans-serif;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: 0;
+}
+
+.add-discussion {
+  display: flex;
+  justify-content: flex-start;
+  background-color: transparent;
+  background-image: url('./../icons/mas1.png');
+  background-repeat: no-repeat;
+  background-position: center left;
+  margin-left: 15px;
+  padding-right: 8px;
+  padding-left: 40px;
+  cursor: pointer;
+  color: white;
+  font-size: small;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.close-add {
+  display: flex;
+  justify-content: flex-start;
+  background-color: transparent;
+  background-image: url('./../icons/back.png');
+  background-repeat: no-repeat;
+  background-position: center left;
+  margin-left: 66px;
+  padding-right: 8px;
+  padding-left: 42px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  cursor: pointer;
+  font-size: small;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+
+/* radio buttons for category selection in Add Post and Sort Selector*/
+
+.add-radio {
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+}
+
+.add-radio input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.add-radio label {
+  float: left;
+  display: inline-block;
+  width: 123px;
+  color:white;
+  font-weight: normal;
+  font-size: small;
+  text-align: center;
+  text-shadow: none;
+  cursor: pointer;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.add-radio-checked {
+  font-weight: bold;
+}
