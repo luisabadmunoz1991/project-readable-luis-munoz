@@ -49,8 +49,7 @@ class ShowPosts extends Component {
               </div>
             </div>)
           : (<div className='detail-not-found'>
-              sorry, no posts available <br />
-              please add a discussion
+              add a discussion because its not discussion here 
             </div>) }
     
       </div>

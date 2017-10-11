@@ -50,6 +50,29 @@ export const deleteComment = (id) => {
   }
   return fetch(`${api}/comments/${id}`, headersDelete,)
 }
+// GET /comments/:id
+export const fetchOneComment = (id) => {
+  const headersGet = {
+    headers: { 'Authorization': 'hildegwUdacityReadable' }
+  }
+  return fetch(`${api}/comments/${id}`, headersGet)
+  .then(result => result.json())
+}
+
+// vote for type = post or comment, option = upvote or downvote
+export const vote = (id, option, type) => {
+  const data = {id: id, option: option}
+  const headersVote = {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'hildegwUdacityReadable'
+    }
+  }
+  return fetch(`${api}/${type}/${id}`, headersVote)
+}
+
 
 export const addPost = (post) => {
   const timeStamp = new Date().getTime()
@@ -109,25 +132,3 @@ export const updateComment = (id, body) => {
   return fetch(`${api}/comments/${id}`, headersUpdate,)
 }
 
-// GET /comments/:id
-export const fetchOneComment = (id) => {
-  const headersGet = {
-    headers: { 'Authorization': 'hildegwUdacityReadable' }
-  }
-  return fetch(`${api}/comments/${id}`, headersGet)
-  .then(result => result.json())
-}
-
-// vote for type = post or comment, option = upvote or downvote
-export const vote = (id, option, type) => {
-  const data = {id: id, option: option}
-  const headersVote = {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'hildegwUdacityReadable'
-    }
-  }
-  return fetch(`${api}/${type}/${id}`, headersVote)
-}
